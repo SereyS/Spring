@@ -15,8 +15,9 @@ public class ProduitDTO {
 	private String nomProduit;
 	private Double prixProduit;
 	private Date dateCreation;
-	private Categorie categorie;
+	private Categorie categorie; // faire un controlleur comme pour Categorie
 	private String nomCat;
+	
 	public Long getIdProduit() {
 		return idProduit;
 	}

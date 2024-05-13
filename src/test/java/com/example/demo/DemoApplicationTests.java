@@ -19,7 +19,7 @@ class DemoApplicationTests {
 	
 	@Test	
 	public void testCreateProduit() {
-		Produit prod = new Produit("Iphone X",1700.500,new Date());
+		Produit prod = new Produit("Samsong ",800.500,new Date());
 		produitRepository.save(prod);
 		}
 	@Test

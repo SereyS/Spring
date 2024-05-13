@@ -20,8 +20,8 @@ public interface ProduitService {
 	ProduitDTO saveProduit(ProduitDTO produit);
 	ProduitDTO updateProduit(ProduitDTO produit);
 	
-	
-	
+	void  deleteProduit(ProduitDTO produit);
+	void deleteProduitById(Long id) ;
 	/*
 	Produit saveProduit(Produit p);
 	Produit updateProduit(Produit p);

@@ -24,6 +24,11 @@ public class ProduitServiceImpl implements ProduitService {
 	public ProduitDTO saveProduit(Produit p) {
 		return convertEntityToDto( produitRepository.save(p));
 	}
+	
+	@Override
+	public void deleteProduitById(Long id) {
+		  produitRepository.deleteById(id);
+	}
 	@Override
 	public ProduitDTO getProduit(Long id) {
 		return convertEntityToDto( produitRepository.findById(id).get());
@@ -37,7 +42,7 @@ public class ProduitServiceImpl implements ProduitService {
 				.map(this::convertEntityToDto)
 				.collect(Collectors.toList());
 
-	//OU BIEN
+	//OU BIEN  
 	/*List<Produit> prods = produitRepository.findAll();
 	List<ProduitDTO> listprodDto = new ArrayList<>(prods.size());
 	for (Produit p : prods)
@@ -76,5 +81,9 @@ public class ProduitServiceImpl implements ProduitService {
 	@Override
 	public ProduitDTO updateProduit(ProduitDTO p) {
 		return convertEntityToDto(produitRepository.save(convertDtoToEntity(p)));
+	}
+	@Override
+	public void deleteProduit(ProduitDTO p) {
+		 produitRepository.delete(convertDtoToEntity(p) );
 	}
 }
